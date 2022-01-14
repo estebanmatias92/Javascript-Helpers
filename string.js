@@ -7,3 +7,16 @@ function spinalCase(str) {
   
   return str.replace(/\s+|_+/g, "-").toLowerCase()
 }
+
+/*
+  Case-sensitive word replacer
+*/
+function sensitiveReplace(str, before, after) {
+  let capitalChar = /^[A-Z]/;
+
+  return str.replace(before, replace => {
+      replace = after.split("");
+      replace[0] = capitalChar.test(before) ? replace[0].toUpperCase() : replace[0].toLowerCase();      
+      return replace.join("");
+  });
+}
