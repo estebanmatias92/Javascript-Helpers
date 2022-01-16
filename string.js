@@ -35,3 +35,19 @@ function missingChar(str) {
   
   return undefined;
 }
+
+
+/*
+  Convert symbols to html entities
+*/
+function convertHTML(str) {
+    let htmlEntities = {
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        '"': "&quot;",
+        "'": "&apos;"
+    }
+
+    return str.replace(/[<>&\"']/g, match => htmlEntities[match]);
+}
