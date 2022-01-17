@@ -24,7 +24,7 @@ function getPrimes(num) {
         if (!sieve[i]) {
             primes.push(i);
 
-            for (let j = i * 2; j <= num; j += i)
+            for (let j = i * i; j <= num; j += i)
                 sieve[j] = true;          
         }
     }
