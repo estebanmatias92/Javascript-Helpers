@@ -4,10 +4,10 @@
 */
 
 Object.assign(Math, {
-    'microGcd': (a, b) => (a == 0) ? b : Math.microGcd(b % a, a),
-    'gcd': (...arr) => arr.reduce((prev, value, i) => prev = (i === 0 ? value : Math.microGcd(value, prev)), 1),
-    'microLcm': (a, b) => a * b / Math.microGcd(a, b),
-    'lcm': (...arr) => arr.reduce((prev, value, i) => prev = (i === 0 ? value : Math.microLcm(value, prev)), 1)
+    'gcd2': (a, b) => (b == 0) ? a : Math.gcd2(b, a % b),
+    'gcd': (arr) => arr.reduce((prev, current, i) => prev = (i === 0 ? current : Math.gcd2(current, prev)), 1),
+    'lcm2': (a, b) => a * b / Math.gcd2(a, b),
+    'lcm': (arr) => arr.reduce((prev, current, i) => prev = (i === 0 ? current : Math.lcm2(current, prev)), 1)
 });
 
 
