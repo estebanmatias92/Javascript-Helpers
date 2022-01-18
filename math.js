@@ -5,9 +5,9 @@
 
 Object.assign(Math, {
     'gcd2': (a, b) => (b == 0) ? a : Math.gcd2(b, a % b),
-    'gcd': (arr) => arr.reduce((prev, current, i) => prev = (i === 0 ? current : Math.gcd2(current, prev)), 1),
+    'gcd': arr => arr.reduce((multiple, current) => Math.gcd2(current, multiple)),
     'lcm2': (a, b) => a * b / Math.gcd2(a, b),
-    'lcm': (arr) => arr.reduce((prev, current, i) => prev = (i === 0 ? current : Math.lcm2(current, prev)), 1)
+    'lcm': arr => arr.reduce((multiple, current) => Math.lcm2(current, multiple))
 });
 
 
